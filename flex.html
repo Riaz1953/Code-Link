@@ -1,0 +1,48 @@
+<!-- flex holo 1 dimensional process 
+display flex ei command dewar jonno eliment gulo ekta parent div e thakte hobe -->
+<div class="container">
+    <p class="item one">We are flex item 1</p>
+    <p class="item two">We are flex item 2</p>
+    <p class="item three">We are flex item 3</p>
+    <p class="item four">We are flex item 4</p>
+    <!-- ekhane ek ekta p tag holo flex item -->
+</div>
+<style>
+    .container{
+        display: flex;
+        flex-direction: row/row-reverse;  /* (By default) */ 
+        flex-direction: column/column-reverse;
+        flex-wrap: nowrap;                   /* (By default) */
+        flex-wrap:wrap;/*(display=flex dewar por jodi kono div container bahire cole jay tahole flex-wrap=wrap kore dite hobe);*/
+        flex-wrap: wrap-reverse;
+        /*(container er reverse hoye jabe and niche neme jabe);*/
+        /* flex-flow:row/column ! row-reverse/column-reverse; */
+        justify-content:flex-start ;/*lt to rt alignment by default*/
+        justify-content:flex-end;   /*All container will go rt side of div*/
+        justify-content:center; /*All container will go center from lt to rt side of div*/
+        justify-content:space-around;   /*All content will take  equal space of both side from lt to rt side of div*/
+        justify-content:space-between;  /*All content will take position from lt to rt side of div & space of two content will be equal*/
+        justify-content:space-evenly;   /*All content will take equal space from lt to rt side of div */
+        align-items: stretch;   /* container will align from top tobottom.*/
+        align-items: center;
+        align-content: flex-start;
+        align-content: flex-end;
+        align-content: space-around;
+        align-content: space-between;
+        align-content: space-evenly;
+    }
+    .one{
+     order: 1; /*by default all item has order property 0, tai tara html
+     source hisabe browser e show kore . whose order is less they will show first in browser.*/
+
+    }
+    .item{
+        flex-grow: 0;
+        flex-grow: 1; /* device er viewportWith er cheye jodi all flex content er width kom hoy tahole tara khali viewport-width dokhol kore na. cause flex grow by default 0 thake jodi flex grow 1 kora hoy taole vw er cheye content er width kom holeo tara khali width dokhon kore ney. jodi amora fixed width bole dei taoleo flex grow:1 kaj korbr*/
+        flex-shrink: 1; 
+        flex-shrink: 0; /* flex grow er opposit. 1 by default value. shrink:0 kore dile,vw komle content overflow hoye jabe jodi na flex-wrap:wrap na thake*/
+        flex-basis: 300px;  /*flex er item gulo jodi min-width:300px hoy & er por jodi device er width 300px er theke kome jay tokon content overflow hobe. kintu min-width na diye flex-basis dile device width kome geleo content er width shrink hoye jabe,tokhonr overflow hobe na*/
+
+    }
+   
+</style>
