@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css grid cheatsheet exolainatin with code</title>
+    <style>
+    .item{
+            font-size: 40px;
+        }
+        .header{
+            background-color:red ;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-column: 1/3;   /* start/end line */
+            grid-column: 1/-1;   /* start/end line */
+            grid-column: 1/span 2;   /* start/sprad 2 line */
+            grid-area: h;
+        }
+        .menu{
+            background-color:chartreuse ;
+            grid-area: m;
+            justify-self: start;
+            justify-self: end;
+            align-self: start;
+            align-self: calc();
+        }
+        .content{
+            background-color:gold ;
+            grid-area: c;
+        }
+        .footer{
+            background-color:darkgreen ;
+            grid-area: f;
+        }
+        .five{
+            background-color:indigo ;
+        }
+        .six{
+            background-color:rgb(231, 228, 9) ;
+        }
+        /* This is the game of row and column. jekhan theke column shuru hoyeche seta line no 1 & tar theke rt side e line no barbe. abar rt side theke count korle -1,-1 evabe line no count hobe */
+        /* Row jekhan theke shuru seta 1 no line top to bottom line no barte thake */
+        .container {
+            display: grid; /*Default value*/
+            grid-template-columns:100px 100px ;  /*100px er 2 column hobe . content onujai baki ja ache row songkha bere jabe.grid-template-column mane column er width dicchi*/ 
+            grid-template-columns:150px auto 100px; /*1 no 3 no column 100px kore space nibe middle column vw er baki space niye nibe*/
+            grid-template-columns:1fr 2fr; /* vw jototuku ache  ta 3 diya devide kore 1st column nibe 1 vag 2nd column nibe 2 vag*/
+            grid-template-columns:150px 100px; /*150px er 1 ta  and 100px er 1ta column hobe . content onujai baki ja ache row autometic bose jabe.grid-template-column mane column er width dicchi*/
+            grid-template-rows:100px 100px ;
+            grid-template-rows:150px auto 100px;    /*ekhane auto content er height ja ache tai take barbe na jodi na container er height na dewa hoy */
+            grid-template-rows:1fr 2fr;  
+            grid-row-gap: 2px; /*2 ta row er majhe gap hobe*/
+            grid-column-gap: 2px;   /*2 ta column er majhe gap hobe*/
+            grid-gap: 2px;  /*Row and column er majhe gap hobe */
+            grid-template: 1fr 2fr/2fr 3fr; /* row pabe/column pabe */
+            grid-template-columns: 1fr 1fr 1fr/repeat(3, 1fr);
+            grid-template-columns: repeat(12,1fr);
+            grid-template-areas: /* ei command er sathe grid template columns:repeat(12,1fr) ei command dite hobe*/
+            "h h h h h h h h h h h h"
+            "m m c c c c c c c c c c"
+            "f f f f f f f f f f f f";
+            grid-template-columns: auto-fit, 90px; /*Device width small howar karone kono column jodi 90px er kom hoy tahole oi content next row te cole asbe*/
+            grid-template-columns: auto-fit, minmax(90px,1fr); /*Device width small howar karone kono column jodi 90px er kom hoy and sei khane tahole 1fr diye tahole oi content khali jayga fill hobe*/
+            grid-auto-rows: 1fr;
+            grid-auto-columns: 1fr;
+            grid-auto-rows: 100px;
+            justify-content: left;  /*by defult*/
+            justify-content: right; /*by the way justify means left to right alignment*/
+            justify-content: center;
+            justify-content: space-around;
+            justify-content: space-between;
+            justify-content: space-evenly;
+            align-content: end;/*by the way justify means top to bottom alignment*/
+            align-content:center ;
+            justify-items: end; /* container er vitore j div gulo thake and sei div er vitore je eliment thake segulo oi div er bottom e cole jabe*/
+            justify-items: center;  /* By the way justify or align item means container>div>element er vertical alignment*/
+            align-items: center;
+            align-items: end;
+
+
+        }
+    </style>
+</head>
+<!--  -->
+<body>
+    <div class="container"> <!-- grid system e ekta container thakte hobe jar moddhe item gulo thakbe jegulo niye amora khelbo -->
+        <div class="item header">HEADER</div>
+        <div class="item menu">MENU</div>
+        <div class="item content">CONTENT</div>
+        <div class="item footer">FOOTER</div>
+        <div class="item five">5</div>
+        <div class="item six">6</div>
+        <!--  -->
+    </div>
+</body>
+</html>
